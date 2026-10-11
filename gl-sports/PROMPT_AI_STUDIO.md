@@ -132,11 +132,8 @@ Na vitrine (cards), use a arte 2D normal. Opcional: ao passar o mouse, um ícone
 
 ## 5. Identidade visual
 
-- Nome/logo: **GL Sports** em tipografia esportiva, bold, levemente itálica (ex.: "Barlow Condensed" ou "Oswald" nos títulos, "Inter" no texto).
-- Paleta: fundo escuro grafite `#0E0F12`, superfícies `#17191F`, texto claro, **cor de destaque verde-neon `#22E06B`** e secundária azul elétrico `#2F6BFF`. Ter também **modo claro** (alternador no topo) com fundo branco.
-- Cards com cantos arredondados (16px), sombra suave, hover com leve zoom na imagem e borda na cor de destaque.
-- Microanimações discretas (Framer Motion): entrada dos cards, abertura do carrinho, troca de abas.
-- Ícones: lucide-react.
+Siga a identidade oficial da GL Sports descrita em `gl-sports/PROMPT_IDENTIDADE_VISUAL.md`: site sempre escuro (`#0A0B0D`), verde-neon `#58E707` como cor principal, azul `#026FF6`, laranja `#FC6602`, faixa tricolor, pinceladas de tinta, títulos em "Barlow Condensed" itálico caixa alta e o logo oficial:
+`https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@371be0c/gl-sports/marca/logo-gl-sports.png`
 
 ## 6. Experiência e qualidade
 
