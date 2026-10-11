@@ -12,7 +12,7 @@ Crie um site de e-commerce completo, moderno e muito intuitivo chamado **GL Spor
 Todo o catálogo já existe em um JSON público. Carregue-o com `fetch` ao abrir o site (e guarde em cache em memória):
 
 ```
-https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@claude/extract-website-images-ehffq2/gl-sports/catalogo.json
+https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@24377ec/gl-sports/catalogo.json
 ```
 
 Estrutura do JSON:
@@ -72,7 +72,7 @@ As categorias antigas eram uma lista solta. Agora ficam em **8 grupos** (já vê
 Na página de cada estampa o cliente vê **um manequim 3D vestindo a camisa** e gira com o dedo/mouse para ver **frente, costas e mangas**. **Não use IA de imagem**: o 3D é montado no navegador, em tempo real, a partir da própria arte (custo zero por produto e por visitante).
 
 Use **three.js** com **@react-three/fiber** e **@react-three/drei** (`OrbitControls`). Um protótipo funcional, que deve ser reproduzido fielmente como componente React `Provador3D`, está em:
-`https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@claude/extract-website-images-ehffq2/gl-sports/prototipo-3d/provador.html`
+`https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@24377ec/gl-sports/prototipo-3d/provador.html`
 
 ### Dados do 3D (já vêm no catálogo)
 
