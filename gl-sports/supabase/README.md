@@ -11,7 +11,7 @@ Tudo já está pronto aqui; é só aplicar quando for configurar o Supabase.
 ## Como ligar (uma vez só)
 
 1. Crie o projeto em https://supabase.com (região São Paulo).
-2. **SQL Editor:** cole e rode `0001_crm.sql` e depois `0002_storage.sql`.
+2. **SQL Editor:** cole e rode `0001_crm.sql`, depois `0002_storage.sql` e `0003_permissoes_visitante.sql`.
 3. **Authentication → Providers → Email:** deixe ativado. Em **URL Configuration**, coloque o domínio do site.
 4. **Crie a conta master** (a sua):
    - Em **Authentication → Users → Add user**, informe o seu e-mail e uma senha forte.

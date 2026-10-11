@@ -733,7 +733,7 @@ grant execute on function criar_pedido(jsonb, date, funil_venda, text),
   to authenticated;
 grant execute on function papel_atual(), e_equipe(), e_admin(), meu_cliente_id(),
   pode_ver_pedido(uuid), pode_editar_pedido(uuid)
-  to authenticated;
+  to anon, authenticated;
 
 -- ---------------------------------------------------------------------------
 -- Mensagens automáticas (textos iniciais, editáveis no CRM)
