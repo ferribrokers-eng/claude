@@ -56,7 +56,7 @@ Os outros produtos ficam como estão:
   - Botões **Frente**, **Costas** e **Girar**.
 - Embaixo, mostre os botões **"Camisa montada 3D"** e **"Molde (peças)"** para alternar.
 - Fundo do palco escuro, com brilho radial verde e azul (cores da marca).
-- Monte o 3D só nessa página, com lazy loading. Ao sair da página, descarte a geometria e as texturas.
+- Nesta página, monte o 3D com lazy loading. Ao sair da página, descarte a geometria e as texturas.
 
 ## 5. Conferência
 
