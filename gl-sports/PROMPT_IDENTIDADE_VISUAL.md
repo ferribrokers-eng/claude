@@ -1,4 +1,4 @@
-Aplique a identidade visual oficial da GL Sports em todo o site. Ela substitui qualquer cor, fonte ou estilo anterior. Não mude nada que já funciona (catálogo, categorias, provador 3D, WhatsApp); mude só o visual e os textos de marca indicados abaixo.
+Aplique a identidade visual oficial da GL Sports em todo o site. Ela substitui qualquer cor, fonte ou estilo anterior. Não mude nada que já funciona (catálogo, categorias, WhatsApp). O site não tem provador 3D: não adicione nenhum; mude só o visual e os textos de marca indicados abaixo.
 
 ## 1. Logo
 
@@ -17,7 +17,7 @@ O site é **sempre escuro**, como o portfólio da marca. Remova o modo claro.
 | `grafite` | `#14161A` | Cards, cabeçalho, gavetas e menus |
 | `grafite-2` | `#1D2026` | Bordas, hover dos cards, campos |
 | `verde` | `#58E707` | **Cor principal**: botões de comprar, preços, destaques, palavra final dos títulos |
-| `azul` | `#026FF6` | Cor secundária: links, botões secundários, selo "3D" |
+| `azul` | `#026FF6` | Cor secundária: links e botões secundários |
 | `laranja` | `#FC6602` | Cor de destaque: selos "Novo" e "Mais vendido", detalhes |
 | `ciano` | `#10C6EE` | Só brilhos e realces (glow), nunca em texto |
 | `branco` | `#FFFFFF` | Títulos |
@@ -31,7 +31,7 @@ O site é **sempre escuro**, como o portfólio da marca. Remova o modo claro.
 
 - **Faixa tricolor:** uma linha fina com gradiente verde → azul → laranja (`linear-gradient(90deg, #58E707, #026FF6, #FC6602)`), 3 a 4 px de altura e cerca de 120 px de largura, embaixo dos títulos de seção, no topo do rodapé e na borda inferior do cabeçalho.
 - **Pinceladas de tinta:** no hero e nos banners, faixas diagonais com textura de pincel/respingo nas cores verde, azul e laranja, como na camisa do portfólio. Faça com SVG ou CSS, sem imagens externas.
-- **Arcos do logo:** um arco duplo verde e azul, com brilho, como elemento decorativo atrás do provador 3D e do hero.
+- **Arcos do logo:** um arco duplo verde e azul, com brilho, como elemento decorativo atrás do logo no hero e atrás da imagem principal na página do produto.
 - Fundo com textura sutil de grafite (ruído leve) e vinheta escura nas bordas.
 
 ## 4. Tipografia (Google Fonts)
@@ -48,7 +48,7 @@ O site é **sempre escuro**, como o portfólio da marca. Remova o modo claro.
    - título: **TUDO PARA QUEM VIVE O ESPORTE.** ("O ESPORTE." em verde)
    - subtítulo: "Camisetas e uniformes personalizados para times, escolas, eventos e empresas. Sede em Peruíbe/SP. Atendemos todo o Brasil."
    - botões: **"Ver estampas"** (verde) e **"Falar no WhatsApp"** (contorno azul)
-   - ao lado, no desktop, o provador 3D girando com uma camisa de destaque
+   - ao lado, no desktop, uma montagem com 3 estampas em destaque do catálogo, levemente inclinadas, com as pinceladas coloridas atrás
 2. **Nossas soluções**, em cards escuros com ícone e faixa tricolor no topo de cada card:
    Uniformes personalizados · Materiais esportivos · Manutenção de quadras · Assessoria esportiva · Eventos
 3. **Por que a GL Sports**, com 4 ícones em linha (em verde):
@@ -58,9 +58,9 @@ O site é **sempre escuro**, como o portfólio da marca. Remova o modo claro.
 
 ## 6. Cards, categorias e páginas
 
-- Cards de produto: fundo `grafite`, borda `grafite-2`, cantos de 14 px. No hover, a borda fica verde com um leve brilho e a imagem dá um zoom suave. O selo "3D" fica em azul e o preço em verde.
+- Cards de produto: fundo `grafite`, borda `grafite-2`, cantos de 14 px. No hover, a borda fica verde com um leve brilho e a imagem dá um zoom suave. O preço fica em verde.
 - Cada um dos 8 grupos de categorias recebe uma das cores da marca, alternando verde, azul e laranja, no ícone e na faixa do banner.
-- O palco do provador 3D usa fundo escuro com um brilho radial azul e verde atrás do manequim. Os botões Frente, Costas e Girar ficam em pílulas escuras, e o botão ativo fica em verde.
+- Página do produto: imagem grande com zoom sobre fundo escuro, com um brilho radial azul e verde atrás, e as miniaturas da galeria em pílulas escuras (a selecionada com borda verde).
 - Cabeçalho fixo em `grafite` translúcido com desfoque (`backdrop-blur`), logo à esquerda, menu em caixa alta espaçada e busca em destaque.
 
 ## 7. Rodapé
