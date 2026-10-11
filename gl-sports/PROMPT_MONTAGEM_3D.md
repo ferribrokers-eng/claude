@@ -30,21 +30,27 @@ Os outros produtos ficam como estão:
 5. **Sem manequim:** mostre só a camisa, como uma camiseta pronta flutuando.
 6. Material `MeshStandardMaterial` com `alphaTest: 0.5`, luz suave de estúdio e uma sombra leve no chão.
 
-## 3. No card (vitrine, categorias, busca): imagem "montada" gerada pelo 3D
+## 3. No card (vitrine, categorias, busca): as duas versões no mesmo card
 
-- Use **um único renderizador WebGL escondido**, compartilhado por todo o site. Não crie um canvas 3D por card.
-- Para cada card desses produtos, renderize uma imagem quadrada de 600×600 com DUAS camisas lado a lado (frente à esquerda e costas à direita, levemente giradas), no mesmo estilo das fotos montadas da Interclasse, em fundo cinza-claro `#ECEEF0`.
-- Transforme o resultado em imagem (`canvas.toBlob` → URL) e use como `capa` do card. Ao passar o mouse, mostre o molde original (`imagem_molde`).
-- Desempenho:
-  - só renderize quando o card aparecer na tela (`IntersectionObserver`);
-  - uma fila de 1 render por vez;
-  - guarde o resultado em cache (`Map` em memória + IndexedDB, com a chave `id`) para não montar de novo;
-  - enquanto monta, mostre o molde com um skeleton suave por cima;
-  - se der erro ou o WebGL não funcionar, mostre o molde.
+- **A foto que já está no card continua sendo a principal.** Não troque nem remova: o molde (peças separadas) aparece primeiro, como hoje.
+- No canto do card, coloque um botão em pílula **"Ver em 3D"**, com ícone de cubo, em verde.
+  - Ao clicar (ou ao passar o mouse, no computador), o próprio card troca para a **camisa montada em 3D**, com fade de 250 ms.
+  - O botão vira **"Ver molde"** para voltar à foto original.
+- **Dentro do card, o 3D é interativo:**
+  - a camisa gira sozinha devagar;
+  - o cliente arrasta com o dedo ou o mouse para ver frente e costas;
+  - não precisa abrir a página do produto.
+- Embaixo da imagem do card, coloque dois pontinhos indicadores: **Molde** e **3D**.
+- Desempenho (importante, pois são muitos cards):
+  - use **um único renderizador WebGL compartilhado**: só **um card por vez** fica com o 3D interativo ativo;
+  - quando o cliente abre o 3D em outro card, o anterior vira uma imagem parada (*snapshot* da última posição);
+  - só monte o 3D quando o cliente pedir (clique ou mouse), nunca de forma automática na lista;
+  - guarde as peças recortadas em cache (`Map` com a chave `id`) para reabrir rápido;
+  - se o WebGL falhar, o botão "Ver em 3D" some e o card fica só com a foto original.
 
 ## 4. Na página do produto: 3D interativo
 
-- Só para esses produtos: a imagem principal vira o `Camisa3D` interativo.
+- Só para esses produtos: a galeria mostra a foto original (molde) primeiro e, ao lado, o `Camisa3D` interativo.
   - O cliente gira com o dedo ou o mouse (OrbitControls sem pan, zoom limitado).
   - A camisa gira sozinha devagar e para quando o cliente toca.
   - Botões **Frente**, **Costas** e **Girar**.
@@ -56,7 +62,7 @@ Os outros produtos ficam como estão:
 
 Me diga:
 
-- se a categoria Futebol mostra as camisas montadas (frente e costas) nos cards e troca para o molde no mouse;
+- se os cards de Futebol continuam com a foto original e o botão "Ver em 3D" mostra a camisa montada girando dentro do próprio card;
 - se, ao abrir um produto de Futebol, a camisa gira em 3D;
 - se a Interclasse continua com as fotos montadas originais;
 - se a página da categoria continua rápida no celular;
