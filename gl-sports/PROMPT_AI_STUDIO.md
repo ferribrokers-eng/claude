@@ -34,7 +34,8 @@ Estrutura do JSON:
       "preco": 2.88,
       "tags": [],
       "tipo": "estampa",          // "estampa" = arte de camiseta | "recurso" = mockup/template/molde
-      "imagens": ["https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@.../estampashirt_imagens/Futebol/arte.jpg"]
+      "imagens": ["https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@.../estampashirt_imagens/Futebol/arte.jpg"],
+      "visual3d": { "layout": "molde", "imagem": "...", "pecas": { } }   // ver seção 3
     }
   ]
 }
@@ -66,56 +67,51 @@ As categorias antigas eram uma lista solta. Agora ficam em **8 grupos** (já vê
 - Cada grupo tem sua página (`/grupo/esportes`) com um banner e chips para filtrar pelas categorias do grupo.
 - Cada categoria tem sua página (`/categoria/futebol`).
 
-## 3. Pessoa vestindo cada estampa (mockup com IA) — recurso principal
+## 3. Provador 3D — recurso principal
 
-Cada estampa (`tipo === "estampa"`) deve poder ser vista **em uma pessoa real vestindo a camiseta**.
+Na página de cada estampa o cliente vê **um manequim 3D vestindo a camisa** e gira com o dedo/mouse para ver **frente, costas e mangas**. **Não use IA de imagem**: o 3D é montado no navegador, em tempo real, a partir da própria arte (custo zero por produto e por visitante).
 
-**Regra de custo (obrigatória):** os visitantes **nunca** disparam geração de imagem. As fotos são geradas **uma única vez por produto**, só na área do administrador (abaixo), aprovadas e publicadas como arquivos estáticos. A loja pública apenas exibe essas imagens prontas, e a chave da API do Gemini **não** pode aparecer no código da loja pública.
+Use **three.js** com **@react-three/fiber** e **@react-three/drei** (`OrbitControls`). Um protótipo funcional, que deve ser reproduzido fielmente como componente React `Provador3D`, está em:
+`https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@claude/extract-website-images-ehffq2/gl-sports/prototipo-3d/provador.html`
 
-Na loja pública:
-1. A foto do modelo de cada produto fica em `https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@claude/extract-website-images-ehffq2/gl-sports/modelos/{id}.jpg` (constante `MODELOS_BASE_URL` no `config.ts`).
-2. Na página do produto, mostre as abas **"Ver no modelo"** e **"Arte original"**. Se a foto do modelo não existir (erro ao carregar a imagem), esconda a aba e mostre só a arte original, sem mensagem de erro.
-3. **Não** existe foto de modelo para `tipo === "recurso"` (Mockups, Templates, Moldes).
+### Dados do 3D (já vêm no catálogo)
 
-Na geração (somente no admin), use o modelo de geração/edição de imagens do Gemini disponível no AI Studio (o mais recente com suporte a imagem de entrada, ex.: "Nano Banana" / Gemini Image) via `@google/genai`, enviando a imagem da estampa (`imagens[0]`, convertida para base64) junto com o prompt abaixo.
+Cada produto tem `visual3d`:
 
-Prompt de imagem (montar dinamicamente com a categoria):
-
-```
-Fotografia de produto realista, estilo catálogo de e-commerce esportivo premium.
-Uma pessoa vestindo uma camiseta com EXATAMENTE a estampa da imagem enviada,
-aplicada na frente da camiseta, preservando cores, textos, números e posições da arte,
-com caimento natural do tecido, dobras e iluminação realistas.
-Contexto da cena: {CENA_DA_CATEGORIA}.
-Enquadramento da cintura para cima, pessoa de frente, fundo limpo e levemente desfocado,
-luz de estúdio suave, alta nitidez, proporção 4:5.
-Pessoa fictícia (não é celebridade), diversidade de gênero, idade e tom de pele adequada ao público.
-Sem textos extras, sem marcas d'água, sem logotipos adicionais além dos que já estão na arte.
+```json
+"visual3d": {
+  "layout": "molde",                 // molde | so_frente | kit | foto | recurso
+  "imagem": "https://cdn.jsdelivr.net/gh/.../Futebol/arte.jpg",   // arte usada no 3D
+  "pecas": {                          // [x, y, largura, altura] em fração (0–1) da imagem
+    "frente":   [0.031, 0.063, 0.457, 0.633],
+    "costas":   [0.516, 0.055, 0.453, 0.648],
+    "manga_esq":[0.051, 0.727, 0.418, 0.223],
+    "manga_dir":[0.535, 0.727, 0.414, 0.223]
+  },
+  "aprox": true                       // opcional: posição estimada (camisa clara)
+}
 ```
 
-Mapa `{CENA_DA_CATEGORIA}`:
-- Futebol / Torcida → torcedor(a) ou atleta em estádio ou campo de futebol
-- Ciclismo → ciclista com camisa de ciclismo, estrada ou trilha ao fundo
-- Pesca → pescador(a) às margens de um rio ou em um barco, luz natural
-- Motocross → piloto em pista de terra, capacete na mão
-- Artes Marciais → atleta em academia/tatame
-- Interclasse / Jogos Internos / Nono Ano / Terceirão → grupo de estudantes adolescentes sorrindo em quadra ou pátio escolar
-- Abadás → folião em bloco de carnaval/micareta, confetes, luz de festa
-- Dia dos Pais → pai sorrindo com filho(a) | Dia das Mães → mãe sorrindo com filho(a)
-- Natal / Páscoa / Festa Junina → ambiente decorado da data
-- Super Heróis / Animes / Game / Funko Pop / Desenho Animado / Filmes e Séries / Música → jovem em ambiente urbano ou quarto gamer, luz neon suave
-- Quebrada / Original Style → estilo streetwear, rua urbana, grafite ao fundo
-- Divertidas → pessoa rindo, ambiente descontraído | Agro → pessoa em fazenda, chapéu, campo ao pôr do sol
-- Religião / Católica → pessoa serena, igreja ou paisagem com luz suave
-- Infantil → criança brincando em parque, ambiente alegre e seguro
+| layout | Quantidade | O que mostrar |
+|---|---|---|
+| `molde` | 1.488 | 3D completo: frente, costas e 2 mangas (a arte é o molde plano da camisa) |
+| `so_frente` | 271 | 3D com a frente estampada; costas lisas na cor da camisa |
+| `kit` | 17 | Dois manequins lado a lado (ex.: "Tal Mãe / Tal Filha"); o segundo menor (escala 0,8); peças `frente` e `frente_2` |
+| `foto` | 345 | Sem 3D: a arte já é uma foto pronta. Mostrar a imagem 2D com zoom |
+| `recurso` | 141 | Mockups/Templates/Moldes: sem 3D, só a imagem |
 
-**Geração em lote (área do administrador):** crie a rota `/admin/modelos` (protegida por uma senha simples em variável de ambiente) com:
-- seletor de categoria e botão "Gerar modelos desta categoria";
-- fila com no máximo 2 gerações ao mesmo tempo, barra de progresso, pausar/retomar e repetir em caso de erro;
-- grade com as imagens geradas, para aprovar, descartar ou "gerar outra" (nova pessoa/pose) em cada uma;
-- produtos que já têm foto em `MODELOS_BASE_URL` são pulados, para nunca pagar duas vezes pela mesma estampa;
-- botão "Baixar ZIP" com as imagens aprovadas nomeadas como `{id}.jpg` (o dono envia esse ZIP para a pasta `gl-sports/modelos/` do repositório).
-Na vitrine, se o produto tiver foto de modelo, o card mostra a **pessoa vestindo** e, ao passar o mouse, troca para a arte original.
+### Como montar (mesmo método do protótipo)
+
+1. **Recorte das peças:** carregue `visual3d.imagem` (com `crossOrigin = "anonymous"`) num `<canvas>`, recorte cada caixa de `pecas` com 1,2% de margem e **remova o fundo** por *flood fill* a partir das bordas do recorte. É fundo o pixel com brilho máximo entre 140 e 247 e saturação (máx − mín) < 34 (papel texturizado e sombra), ou laranja (`r>195, 100<g<200, b<160, r−b>60`; faixa decorativa das artes `so_frente`/`kit`). Esses pixels ficam com alfa 0. Cada recorte vira uma `CanvasTexture` (sRGB) em `MeshStandardMaterial` com `alphaTest: 0.5`, `side: DoubleSide`, `roughness: 0.82`.
+2. **Tronco:** frente e costas são duas superfícies curvas (meia elipse cada, 48×40 segmentos) com raios `rx = 0.34`, `rz = 0.21`. A largura da frente vira meia volta do tronco: `escala = meioPerimetro / larguraDaFrente` e `alturaDoTronco = alturaDaFrente × escala`. Perto do topo (v > 0,8) os raios fecham (rx −36%, rz −72%) para formar os ombros. As costas usam ângulos de π/2 a 3π/2, para a arte das costas ficar no sentido certo quando vista por trás.
+3. **Mangas:** cada manga é um tubo (circunferência = largura da peça × escala, comprimento = altura × escala) preso no ombro e inclinado para fora (0,32 rad; 0,12 rad para manga longa, comprimento > 0,6). O centro da arte da manga fica para fora.
+4. **`so_frente` e `kit`:** as costas usam a silhueta da frente espelhada, pintada com a cor média da barra da camisa.
+5. **Manequim de loja** cinza-claro fosco por baixo: tronco, pescoço, cabeça oval, braços (cápsulas), quadril e haste com base metálica.
+6. **Câmera e controles:** perspectiva 32°, `OrbitControls` com amortecimento, sem *pan*, zoom limitado, ângulo vertical limitado (sem ver por baixo). Gira sozinho devagar (desliga ao tocar e respeita `prefers-reduced-motion`). Botões **Frente**, **Costas** e **Girar**.
+7. **Desempenho:** só monte o 3D na página do produto (nunca nos cards da vitrine). Carregue o componente com *lazy loading*, descarte geometrias e texturas ao trocar de produto e mostre "Montando a camisa…" enquanto carrega. Se o WebGL falhar, mostre a arte 2D.
+8. Ao lado do 3D, mostre a **arte original** (o arquivo que o cliente compra) e um selo: "3D completo", "3D · frente", "Kit 3D" ou "Foto 2D".
+
+Na vitrine (cards), use a arte 2D normal. Opcional: ao passar o mouse, um ícone "Ver em 3D".
 
 ## 4. Páginas
 
@@ -127,7 +123,7 @@ Na vitrine, se o produto tiver foto de modelo, o card mostra a **pessoa vestindo
    - Seção "Como funciona" em 3 passos: Escolha → Pague → Baixe e estampe.
    - Depoimentos (placeholders editáveis), FAQ curto e newsletter.
 2. **Grupo / Categoria** — banner, contagem, chips de subcategoria, filtros (grupo, categoria, faixa de preço), ordenação (relevância, A–Z, mais novos = maior `id`), grade responsiva com **scroll infinito** (carregar 24 por vez) e skeletons.
-3. **Produto** — galeria grande com zoom e abas "Ver no modelo" / "Arte original"; nome, categoria (breadcrumb), preço, botão "Adicionar ao carrinho" e botão "Comprar pelo WhatsApp"; descrição padrão (arquivo digital em alta resolução, pronto para sublimação, entrega por download/WhatsApp); "Você também pode gostar" (mesma categoria).
+3. **Produto** — **Provador 3D** (seção 3) em destaque, com a arte original e a galeria de imagens ao lado; nome, categoria (breadcrumb), preço, botão "Adicionar ao carrinho" e botão "Comprar pelo WhatsApp"; descrição padrão (arquivo digital em alta resolução, pronto para sublimação, entrega por download/WhatsApp); "Você também pode gostar" (mesma categoria).
 4. **Busca** — campo sempre visível no topo; resultados instantâneos enquanto digita (sem acento e sem diferenciar maiúsculas: "terceirao" encontra "Terceirão"), com miniaturas no dropdown e página de resultados completa.
 5. **Favoritos** — coração em cada card, salvo em `localStorage`.
 6. **Carrinho** — gaveta lateral com itens, quantidade, total e botão **"Finalizar pelo WhatsApp"**, que abre `https://wa.me/{NUMERO}` com mensagem pronta listando nome + id de cada estampa e o total. Deixe `{NUMERO}` numa constante de configuração fácil de trocar. (Estruturar o código para depois plugar Pix/Mercado Pago.)
@@ -155,4 +151,4 @@ Na vitrine, se o produto tiver foto de modelo, o card mostra a **pessoa vestindo
 
 ## 7. Entrega
 
-Gere o projeto completo e funcional. Ao final, liste: o que foi implementado, onde trocar o número do WhatsApp e a senha do admin, e como gerar os modelos em lote.
+Gere o projeto completo e funcional. Ao final, liste: o que foi implementado, onde trocar o número do WhatsApp e como o Provador 3D monta cada tipo de layout.
