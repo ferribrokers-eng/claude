@@ -59,7 +59,7 @@ Antes de terminar, confira e me diga o resultado de cada item:
 
 Use estes dados em todo o site (cabeçalho, rodapé, página "Contato", botões de WhatsApp e `config.ts`):
 
-- **Nome:** GL Sports. Loja de camisetas personalizadas em Peruíbe, São Paulo.
+- **Nome:** GL Sports. Loja de camisetas personalizadas com sede em Peruíbe (SP) que **atende todo o Brasil**, com envio para qualquer estado. Mostre o selo "Enviamos para todo o Brasil" no topo do site, na home e na página do produto.
 - **WhatsApp/Telefone:** (13) 99701-1514. Use o link `https://wa.me/5513997011514` em todos os botões "Comprar pelo WhatsApp" e "Finalizar pelo WhatsApp", substituindo qualquer número de exemplo.
 - **Endereço:** R. Tulipas Vermelhas, 175, Jardim das Flores, Peruíbe, SP, 11770-610.
 - **Como chegar:** botão "Como chegar", com o link `https://www.google.com/maps/search/?api=1&query=GL+Sports+R.+Tulipas+Vermelhas+175+Peruibe+SP`.

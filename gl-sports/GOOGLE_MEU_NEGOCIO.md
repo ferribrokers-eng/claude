@@ -3,7 +3,7 @@
 Tudo pronto para copiar e colar no perfil da GL Sports (Google Meu Negócio, hoje chamado **Perfil da Empresa no Google**).
 Onde aparece **[colchetes]**, confirme ou preencha. **Não publique nada que não seja verdade**: informação falsa pode levar à suspensão do perfil.
 
-> **Como o Google escolhe quem aparece primeiro:** são 3 fatores. **Relevância** (o perfil combina com o que a pessoa buscou), **distância** (perto de quem busca) e **destaque** (avaliações, fotos, site, menções). Ninguém consegue garantir o 1º lugar. Mas com tudo abaixo feito, a GL Sports fica entre os perfis mais completos da região, e isso pesa muito em Peruíbe e no litoral sul.
+> **Como o Google escolhe quem aparece primeiro:** são 3 fatores. **Relevância** (o perfil combina com o que a pessoa buscou), **distância** (perto de quem busca) e **destaque** (avaliações, fotos, site, menções). Ninguém consegue garantir o 1º lugar. Mas com tudo abaixo feito, a GL Sports fica entre os perfis mais completos da região, e isso pesa muito em Peruíbe e no litoral sul. Fora da região, quem busca acha a GL Sports pelo site e pelas postagens, que divulgam o envio para todo o Brasil.
 
 ---
 
@@ -35,10 +35,10 @@ No campo de categorias, digite e escolha da lista do Google. Os nomes podem vari
 Sem links, sem preços e sem promoções (o Google recusa). Esta versão tem cerca de 690 caracteres:
 
 ```
-A GL Sports é uma loja de camisetas personalizadas em Peruíbe (SP), especializada em sublimação total para times, escolas, eventos e empresas. Criamos e produzimos uniformes de futebol, camisas de interclasse e jogos internos, camisetas de formatura para Nono Ano e Terceirão, abadás para blocos de carnaval, camisas de ciclismo, pesca esportiva e motocross, além de camisetas temáticas para Dia das Mães, Dia dos Pais, datas comemorativas e igrejas. Você escolhe entre milhares de estampas ou cria a sua, com nome e número, e acompanha tudo pelo WhatsApp. Atendemos Peruíbe, Itanhaém, Mongaguá e toda a região do litoral sul e Vale do Ribeira.
+A GL Sports é uma loja de camisetas personalizadas com sede em Peruíbe (SP) que atende todo o Brasil, com envio para qualquer estado. Somos especializados em sublimação total para times, escolas, eventos e empresas: uniformes de futebol, camisas de interclasse e jogos internos, camisetas de formatura para Nono Ano e Terceirão, abadás para blocos de carnaval, camisas de ciclismo, pesca esportiva e motocross, além de camisetas para Dia das Mães, Dia dos Pais, datas comemorativas e igrejas. Escolha entre milhares de estampas ou crie a sua, com nome e número. Todo o atendimento é feito pelo WhatsApp: você aprova a arte antes da produção e recebe onde estiver.
 ```
 
-> Se a loja não usar sublimação, troque "especializada em sublimação total" pela técnica que usa. Se não atende alguma cidade, tire da última frase.
+> Se a loja não usar sublimação, troque "especializados em sublimação total" pela técnica que usa.
 
 ## 4. Contato, endereço e área atendida
 
@@ -46,8 +46,9 @@ A GL Sports é uma loja de camisetas personalizadas em Peruíbe (SP), especializ
 - **Site:** o endereço do site novo (quando estiver no ar). Até lá, deixe vazio ou use o link do WhatsApp.
 - **Link de WhatsApp/mensagens:** se o seu perfil mostrar a opção de link de contato, use `https://wa.me/5513997011514`.
 - **Endereço:** R. Tulipas Vermelhas, 175, Jardim das Flores, Peruíbe, SP, 11770-610. Escreva **exatamente igual** em todos os lugares (site, Instagram, Facebook, WhatsApp Business). Essa consistência ajuda no ranking.
-- **Área de atendimento** (se entrega ou atende outras cidades; até 20):
-  Peruíbe · Itanhaém · Mongaguá · Praia Grande · São Vicente · Santos · Guarujá · Cubatão · Pedro de Toledo · Itariri · Miracatu · Juquiá · Iguape · Ilha Comprida · Registro · Cananéia
+- **Área de atendimento (cidades no perfil):** o Google pede que a área cadastrada fique a cerca de **2 horas de carro** da loja. Cadastrar "Brasil inteiro" pode ser rejeitado ou atrapalhar o ranking. Por isso, cadastre as cidades da região aqui (até 20) e divulgue o **"atendemos todo o Brasil"** na descrição, nos serviços, nos produtos, nas postagens e no site, como já está neste kit:
+  Peruíbe · Itanhaém · Mongaguá · Praia Grande · São Vicente · Santos · Guarujá · Cubatão · Bertioga · Pedro de Toledo · Itariri · Miracatu · Juquiá · Iguape · Ilha Comprida · Registro · Cananéia · São Paulo · São Bernardo do Campo · Santo André
+- **Atributo de entrega:** se aparecer a opção, marque **"Entrega"** / **"Envio"**.
 
 ## 5. Horário de funcionamento
 
@@ -70,6 +71,7 @@ A GL Sports é uma loja de camisetas personalizadas em Peruíbe (SP), especializ
 | Camisetas para igrejas e eventos religiosos | Camisetas para igrejas, retiros, encontros e grupos de jovens, com arte e mensagem personalizadas. |
 | Uniformes para empresas e eventos | Camisetas para empresas, equipes, corridas e eventos, com a sua marca e em qualquer quantidade [confirmar o pedido mínimo]. |
 | Criação de arte para camiseta | Criamos a arte da sua camisa do zero ou adaptamos um modelo do nosso catálogo, com nome, número e as cores do seu time. |
+| Envio para todo o Brasil | Atendimento 100% pelo WhatsApp: você aprova a arte, paga e recebe as camisas em qualquer cidade do Brasil por Correios ou transportadora [confirmar a forma de envio]. |
 
 ## 7. Produtos (aba "Produtos")
 
@@ -89,7 +91,7 @@ Sugestão de nomes de produtos:
 
 Modelo de descrição de produto (troque o tipo de camisa):
 ```
-Camisa de time de futebol 100% personalizada, com sublimação total: cores, escudo, patrocinadores, nome e número de cada jogador. Escolha um dos nossos modelos ou envie a sua ideia. Peça pelo WhatsApp e receba o layout para aprovar antes da produção.
+Camisa de time de futebol 100% personalizada, com sublimação total: cores, escudo, patrocinadores, nome e número de cada jogador. Escolha um dos nossos modelos ou envie a sua ideia. Peça pelo WhatsApp, aprove o layout antes da produção e receba em qualquer lugar do Brasil.
 ```
 
 ## 8. Atributos (aba "Mais")
@@ -161,7 +163,7 @@ Poste **1 vez por semana**, sempre com foto, e use o botão "Saiba mais" (site) 
 
 Modelo de postagem:
 ```
-⚽ Uniforme novo pro seu time? Na GL Sports, em Peruíbe, você escolhe entre centenas de modelos de camisa de futebol com sublimação total, nome e número de cada jogador. Mande a sua ideia no WhatsApp (13) 99701-1514 e receba o layout para aprovar antes de produzir!
+⚽ Uniforme novo pro seu time? Na GL Sports, em Peruíbe, você escolhe entre centenas de modelos de camisa de futebol com sublimação total, nome e número de cada jogador. Mande a sua ideia no WhatsApp (13) 99701-1514, aprove o layout e receba em qualquer lugar do Brasil! 🚚
 ```
 
 ## 12. Perguntas frequentes
@@ -172,13 +174,14 @@ Use no site, nas postagens e na aba de Perguntas e respostas, se ela aparecer no
 - **Qual o pedido mínimo?** [__ peças] / Fazemos a partir de 1 peça [confirmar].
 - **Qual o prazo de produção?** Em média [__] dias úteis depois da aprovação da arte [confirmar].
 - **Posso ver como fica antes de produzir?** Sim, você recebe o layout para aprovar e pode ver a camisa em 3D no nosso site.
-- **Vocês entregam fora de Peruíbe?** Atendemos Itanhaém, Mongaguá e região [confirmar entrega e envio].
+- **Vocês entregam fora de Peruíbe?** Sim! Enviamos para todo o Brasil [por Correios/transportadora: confirmar]. Na região de Peruíbe, você também pode retirar na loja.
+- **Como funciona a compra a distância?** Você escolhe o modelo no site ou manda a sua ideia no WhatsApp, recebe o layout para aprovar, paga e recebe as camisas em casa.
 - **Quais as formas de pagamento?** Pix, cartão e dinheiro [confirmar].
 
 ## 13. No site novo (ajuda o perfil a subir)
 
 1. Mesmo nome, endereço e telefone do perfil, escritos igual, no rodapé de todas as páginas.
-2. Uma página **"Camisetas personalizadas em Peruíbe"** e páginas para "Uniforme de futebol em Peruíbe", "Camisa interclasse em Peruíbe", "Abadá personalizado em Peruíbe" etc.
+2. Uma página **"Camisetas personalizadas com envio para todo o Brasil"**, uma página **"Camisetas personalizadas em Peruíbe"** (para quem busca na região) e páginas para "Uniforme de futebol em Peruíbe", "Camisa interclasse em Peruíbe", "Abadá personalizado em Peruíbe" etc.
 3. Mapa do Google incorporado na página Contato.
 4. Este código no `<head>` da página inicial. Ele diz ao Google que o site é da loja do perfil:
 
@@ -200,7 +203,7 @@ Use no site, nas postagens e na aba de Perguntas e respostas, se ela aparecer no
   },
   "url": "[endereço do site]",
   "openingHours": "[Mo-Fr 08:00-__:__]",
-  "areaServed": ["Peruíbe", "Itanhaém", "Mongaguá", "Praia Grande"]
+  "areaServed": { "@type": "Country", "name": "Brasil" }
 }
 </script>
 ```
@@ -218,8 +221,8 @@ Use no site, nas postagens e na aba de Perguntas e respostas, se ela aparecer no
 - [ ] Categoria principal + secundárias
 - [ ] Descrição colada
 - [ ] Horários de todos os dias + feriados
-- [ ] Área de atendimento
-- [ ] 11 serviços cadastrados
+- [ ] Área de atendimento (região) + "todo o Brasil" na descrição, serviços e site
+- [ ] 12 serviços cadastrados
 - [ ] 10 produtos com foto e preço "a partir de"
 - [ ] Atributos verdadeiros marcados
 - [ ] 30 fotos no 1º mês (logo, capa, fachada, produção, produtos, clientes)
