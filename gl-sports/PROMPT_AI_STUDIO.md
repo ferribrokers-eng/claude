@@ -68,14 +68,16 @@ As categorias antigas eram uma lista solta. Agora ficam em **8 grupos** (já vê
 
 ## 3. Pessoa vestindo cada estampa (mockup com IA) — recurso principal
 
-Cada estampa (`tipo === "estampa"`) deve poder ser vista **em uma pessoa real vestindo a camiseta**. Use o modelo de geração/edição de imagens do Gemini disponível no AI Studio (o mais recente com suporte a imagem de entrada, ex.: "Nano Banana" / Gemini Image) via `@google/genai`:
+Cada estampa (`tipo === "estampa"`) deve poder ser vista **em uma pessoa real vestindo a camiseta**.
 
-1. Envie a imagem da estampa (`imagens[0]`, baixada e convertida para base64) junto com o prompt abaixo.
-2. Mostre o resultado na página do produto, na aba **"Ver no modelo"**, ao lado da aba **"Arte original"**.
-3. Salve a imagem gerada em cache (IndexedDB, chave = `id` do produto) para não gerar de novo.
-4. Enquanto gera, mostre um skeleton animado com o texto "Criando seu modelo…". Se falhar, mostre só a arte original, sem erro feio.
-5. Botão "Gerar outro modelo" para criar uma variação (outra pessoa/pose).
-6. **Não** gere modelo para `tipo === "recurso"` (Mockups, Templates, Moldes).
+**Regra de custo (obrigatória):** os visitantes **nunca** disparam geração de imagem. As fotos são geradas **uma única vez por produto**, só na área do administrador (abaixo), aprovadas e publicadas como arquivos estáticos. A loja pública apenas exibe essas imagens prontas, e a chave da API do Gemini **não** pode aparecer no código da loja pública.
+
+Na loja pública:
+1. A foto do modelo de cada produto fica em `https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@claude/extract-website-images-ehffq2/gl-sports/modelos/{id}.jpg` (constante `MODELOS_BASE_URL` no `config.ts`).
+2. Na página do produto, mostre as abas **"Ver no modelo"** e **"Arte original"**. Se a foto do modelo não existir (erro ao carregar a imagem), esconda a aba e mostre só a arte original, sem mensagem de erro.
+3. **Não** existe foto de modelo para `tipo === "recurso"` (Mockups, Templates, Moldes).
+
+Na geração (somente no admin), use o modelo de geração/edição de imagens do Gemini disponível no AI Studio (o mais recente com suporte a imagem de entrada, ex.: "Nano Banana" / Gemini Image) via `@google/genai`, enviando a imagem da estampa (`imagens[0]`, convertida para base64) junto com o prompt abaixo.
 
 Prompt de imagem (montar dinamicamente com a categoria):
 
@@ -110,9 +112,10 @@ Mapa `{CENA_DA_CATEGORIA}`:
 **Geração em lote (área do administrador):** crie a rota `/admin/modelos` (protegida por uma senha simples em variável de ambiente) com:
 - seletor de categoria e botão "Gerar modelos desta categoria";
 - fila com no máximo 2 gerações ao mesmo tempo, barra de progresso, pausar/retomar e repetir em caso de erro;
-- grade com as imagens geradas, para aprovar/descartar cada uma;
-- botão "Baixar ZIP" com as imagens aprovadas nomeadas como `{id}.jpg`.
-Na vitrine, se existir modelo aprovado/em cache, o card mostra a **pessoa vestindo** e, ao passar o mouse, troca para a arte original.
+- grade com as imagens geradas, para aprovar, descartar ou "gerar outra" (nova pessoa/pose) em cada uma;
+- produtos que já têm foto em `MODELOS_BASE_URL` são pulados, para nunca pagar duas vezes pela mesma estampa;
+- botão "Baixar ZIP" com as imagens aprovadas nomeadas como `{id}.jpg` (o dono envia esse ZIP para a pasta `gl-sports/modelos/` do repositório).
+Na vitrine, se o produto tiver foto de modelo, o card mostra a **pessoa vestindo** e, ao passar o mouse, troca para a arte original.
 
 ## 4. Páginas
 
