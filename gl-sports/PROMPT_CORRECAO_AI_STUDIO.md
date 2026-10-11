@@ -54,3 +54,15 @@ Antes de terminar, confira e me diga o resultado de cada item:
 - quantidade por categoria igual ao `total` do JSON;
 - nenhum produto de exemplo e nenhuma chamada a IA no código;
 - o provador 3D abre em um produto de Futebol (`molde`), em um de Animes (`so_frente`) e no kit "Ctrl C Ctrl V Mãe e Filha" (`kit`).
+
+## 6. Dados reais da loja GL Sports
+
+Use estes dados em todo o site (cabeçalho, rodapé, página "Contato", botões de WhatsApp e `config.ts`):
+
+- **Nome:** GL Sports. Loja de camisetas personalizadas em Peruíbe, São Paulo.
+- **WhatsApp/Telefone:** (13) 99701-1514. Use o link `https://wa.me/5513997011514` em todos os botões "Comprar pelo WhatsApp" e "Finalizar pelo WhatsApp", substituindo qualquer número de exemplo.
+- **Endereço:** R. Tulipas Vermelhas, 175, Jardim das Flores, Peruíbe, SP, 11770-610.
+- **Como chegar:** botão "Como chegar", com o link `https://www.google.com/maps/search/?api=1&query=GL+Sports+R.+Tulipas+Vermelhas+175+Peruibe+SP`.
+- **Avaliação no Google:** 5,0 ★. Mostre "5,0 no Google" no rodapé e na página "Sobre", sem inventar depoimentos. Os depoimentos da home ficam como espaço para preencher.
+- **Horário:** segunda-feira a partir das 08:00. Deixe os demais horários em `config.ts`, com o comentário "preencher".
+- Página **Contato**: endereço, telefone clicável, botão do WhatsApp e botão "Como chegar".
