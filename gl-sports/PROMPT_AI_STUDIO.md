@@ -12,7 +12,7 @@ Crie um site de e-commerce completo, moderno e muito intuitivo chamado **GL Spor
 Todo o catálogo já existe em um JSON público. Carregue-o com `fetch` ao abrir o site (e guarde em cache em memória):
 
 ```
-https://raw.githubusercontent.com/ferribrokers-eng/claude/claude/extract-website-images-ehffq2/gl-sports/catalogo.json
+https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@claude/extract-website-images-ehffq2/gl-sports/catalogo.json
 ```
 
 Estrutura do JSON:
@@ -34,7 +34,7 @@ Estrutura do JSON:
       "preco": 2.88,
       "tags": [],
       "tipo": "estampa",          // "estampa" = arte de camiseta | "recurso" = mockup/template/molde
-      "imagens": ["https://raw.githubusercontent.com/.../Futebol/arte.jpg"]
+      "imagens": ["https://cdn.jsdelivr.net/gh/ferribrokers-eng/claude@.../estampashirt_imagens/Futebol/arte.jpg"]
     }
   ]
 }
